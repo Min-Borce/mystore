@@ -1,15 +1,6 @@
 import { Component, OnInit, Inject, ElementRef } from '@angular/core';
 import { ProductsStateService } from 'src/app/services/products-state.service';
 import { Product } from 'src/app/model/products';
-// import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-// import { AddProductComponent } from '../add-product/add-product.component';
-
-
-// interface Product {
-//   id: string;
-//   name: string;
-//   price: number;
-// }
 
 @Component({
   selector: 'app-products',
@@ -29,6 +20,7 @@ export class ProductsComponent implements OnInit {
   constructor(
     private productState: ProductsStateService,
   ) { }
+
   ngOnInit() {
     this.products = this.productState.getProducts();
   }

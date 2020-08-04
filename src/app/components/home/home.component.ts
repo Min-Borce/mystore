@@ -3,20 +3,13 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/model/products';
 
 
-
-// interface allProducts {
-//   id: string;
-//   name: string;
-//   price: number;
-// }
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  searchText;
   products: Product[];
 
   constructor(
@@ -24,8 +17,6 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-     this.products = this.productState.getProducts()
+    this.products = this.productState.getProducts();
   }
-
-
 }

@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { HomeComponent } from './components/home/home.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +17,12 @@ import { HomeComponent } from './components/home/home.component';
     EditProductComponent,
     HomeComponent
   ],
-  entryComponents: [AddProductComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    Ng2SearchPipeModule
   ],
   exports: [
     AddProductComponent,

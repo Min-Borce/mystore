@@ -3,39 +3,44 @@
         Welcome to our online store
     </h1>
 </div>
-
+<div class="container">
+    <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+            placeholder="   SEARCH">
+    </div>
+</div>
 <div class="container">
     <h2>Best Prices</h2>
     <ul class="nav nav-pills">
         <li class="active"><a data-toggle="pill" href="#cardsView">Cards View</a></li>
         <li><a data-toggle="pill" href="#tableView">Table View</a></li>
     </ul>
-
-
-
     <div class="tab-content">
         <div id="cardsView" class="tab-pane fade in active">
-            <!-- <h3>Cards View</h3> -->
-
-            <div class="container">
-                <div *ngFor="let product of products">
-                    <div class="card card-view col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                        <img class="card-img-top card-imageeee" src="assets/img/shopping.jpg" alt="Card image"
-                            style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">{{product.name}}</h4>
-                            <p class="card-text">{{product.price}}</p>
-                            <a class="btn btn-primary stretched-link">Buy</a>
+            <div class="details-card">
+                <div class="container">
+                    <div class="row">
+                        <div *ngFor="let product of products | filter:searchText ">
+                            <div class="  col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img src="assets/img/shopping.jpg" alt="">
+                                        <span>
+                                            <h4>${{product.price}}</h4>
+                                        </span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <h3>{{product.name}}</h3>
+                                        <a class="btn-card">BUY</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
         <div id="tableView" class="tab-pane fade">
-            <!-- <h3>Table View</h3> -->
             <div class="container">
                 <div class="row">
                     <div class="table-responsive">
@@ -48,51 +53,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- <tr> -->
-                                <tr *ngFor="let product of products">
+                                <tr *ngFor="let product of products | filter:searchText">
                                     <td>
                                         <img class="imageeee" src="assets/img/shopping.jpg">
                                     </td>
                                     <td>{{product.name}}</td>
-                                    <td>{{product.price}}</td>
-                                    <!-- <td>{{getProduct.name}}</td> -->
-                                    <!-- <td>${{getProduct.price}}</td> -->
+                                    <td>${{product.price}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-
-
         </div>
-
-
     </div>
-
-
-
-
 </div>
-
-<!-- </body>
-</html> -->
-
-<!-- 
-<div class="container">
-
-<ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
-    </li>
-  </ul>
-</div> -->

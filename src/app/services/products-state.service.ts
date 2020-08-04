@@ -49,11 +49,9 @@ const products = [
 })
 export class ProductsStateService {
 
-
-getProducts(){
-  return products;
-}
-
+  getProducts() {
+    return products;
+  }
 
   constructor() { }
 }
