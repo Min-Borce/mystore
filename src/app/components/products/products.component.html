@@ -1,0 +1,45 @@
+<link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+<div class="title">
+    <h1 class="title-text">
+        Welcome to Admin Panel
+    </h1>
+</div>
+<div class="container">
+    <div class="row">
+        <button type="button" class="btn btn-primary " (click)="addProduct()">Add Product</button>
+        <ng-container *ngIf="isPopupOpen">
+            <app-add-product (addProduct)="addNewProduct($event)" (closePopup)="closePopUp($event)" id="exampleModal">
+            </app-add-product>
+        </ng-container>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col ">img</th>
+                        <th scope="col ">Name</th>
+                        <th scope="col ">Price</th>
+                        <th scope="col ">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>
+                            <img class="imageeee" src="assets/img/shopping.jpg">
+                        </td>
+                        <td>{{product.name}}</td>
+                        <td>${{product.price}}</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-sm">
+                                <span (click)="editProduct(product)"> EDIT</span> </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ng-container *ngIf="isPopupEditOpen">
+                <app-edit-product [forEdit]="forEditProduct" (editProducts)="getProduct($event)"
+                    (closeEditPopup)="closeEditPopUp($event)" id="exampleModalEdit"></app-edit-product>
+            </ng-container>
+        </div>
+    </div>
+</div>
