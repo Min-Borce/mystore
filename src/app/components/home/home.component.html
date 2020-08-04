@@ -2,6 +2,7 @@
     <h1 class="title-text">
         Welcome to our online store
     </h1>
+    <a class="btn-card admin-panel-position" (click)="navigateToAdmin()">Go TO ADMIN PANEL</a>
 </div>
 <div class="container">
     <div class="search-hero">
@@ -10,7 +11,6 @@
     </div>
 </div>
 <div class="container">
-    <h2>Best Prices</h2>
     <ul class="nav nav-pills">
         <li class="active"><a data-toggle="pill" href="#cardsView">Cards View</a></li>
         <li><a data-toggle="pill" href="#tableView">Table View</a></li>
@@ -50,6 +50,7 @@
                                     <th scope="col ">img</th>
                                     <th scope="col ">Name</th>
                                     <th scope="col ">Price</th>
+                                    <th scope="col ">Buy</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,6 +60,7 @@
                                     </td>
                                     <td>{{product.name}}</td>
                                     <td>${{product.price}}</td>
+                                    <td> <a class="btn-card">BUY</a></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -94,6 +94,7 @@
 
  .card-desc {
    padding: 1.25rem;
+   background-color: #f7f9f9;
  }
 
  .card-desc h3 {
@@ -162,3 +163,9 @@
  }
 
  /* End Search */
+
+ .admin-panel-position{
+   position: absolute;
+   top: 0;
+   right: 0;
+ }
